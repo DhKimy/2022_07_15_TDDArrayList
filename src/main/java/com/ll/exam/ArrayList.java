@@ -27,6 +27,25 @@ public class ArrayList {
         arSize++;
     }
 
+    public void addAt(int data, int index){
+        if(arSize == 0){
+            add(data);
+            return;
+        }
+        for(int i = arSize - 1; i > index; i--){
+            if(arSize >= datum.length){
+                sizeUp();
+            }
+
+            arSize++;
+
+            datum[i] = datum[i - 1];
+            datum[index] = data;
+
+        }
+
+    }
+
     public int get(int index) {
 
         return datum[index];
@@ -51,4 +70,6 @@ public class ArrayList {
             System.out.printf("%d : %d\n", i, datum[i]);
         }
     }
+
+
 }
